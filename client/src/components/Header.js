@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Payments from "./Payments";
+import Spinner from "./Spinner";
 
 class Header extends Component {
   renderContent() {
     switch (this.props.auth) {
       case null:
-        return;
+        return <Spinner />;
       case false:
         return (
           <li>
